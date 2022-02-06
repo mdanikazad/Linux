@@ -1,0 +1,7 @@
+web-server-documentroot-permission
+chown -Rf nginx:groupname documentroot-name
+chmod -Rf 770 documentroot-name
+setfacl -d -R -m g::rwx documentroot-name
+setfacl -R -m u:nginx:rx documentroot-name
+setfacl -d -R -m u:nginx:rx documentroot-name
+chmod g+s documentroot-name
